@@ -23,8 +23,9 @@ class BukuTamuController extends Controller
     public function index()
     {
         $data = BukuTamu::latest()->get();
+        $totalTamu = BukuTamu::count();
 
-        return view('buku_tamu.index', compact('data'));
+        return view('buku_tamu.index', compact('data', 'totalTamu'));
     }
 
     public function edit($id)
